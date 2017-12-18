@@ -3,6 +3,8 @@
 > [GoMap](https://gomap.eu) is a Real-time Pokémon Go map for Germany and Austria.
 
 This script is designed to enhance the function of GoMap.
+## Installation:
+[Greasy Fork](https://greasyfork.org/scripts/33147)
 
 ## Features:
 
