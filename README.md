@@ -4,7 +4,11 @@
 
 This script is designed to enhance the function of GoMap.
 ## Installation:
-[Greasy Fork](https://greasyfork.org/scripts/33147)
+[Greasy Fork](https://greasyfork.org/scripts/33147), it only works on the browsers which support userscripts.
+- Desktop Devices：Chrome, Firefox, Opera etc. 
+- Mobile Devices: Firefox, Yandex, Dolphin etc. for Android. iOS currently not supported.
+Userscripts manager: [Tampermonkey](http://tampermonkey.net/), [Violentmonkey](https://violentmonkey.github.io/), etc.
+
 
 ## Features:
 
