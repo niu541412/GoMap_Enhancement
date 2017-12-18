@@ -8,7 +8,7 @@ This script is designed to enhance the function of GoMap.
 - Desktop Devices：Chrome, Firefox, Opera etc. 
 - Mobile Devices: Firefox, Yandex, Dolphin etc. for Android. iOS currently not supported.
 
-Userscripts manager: [Tampermonkey](http://tampermonkey.net/), [Violentmonkey](https://violentmonkey.github.io/), etc.
+Userscripts manager: [Tampermonkey](http://tampermonkey.net/){:target="_blank"}, [Violentmonkey](https://violentmonkey.github.io/){:target="_blank"}, etc.
 
 
 ## Features:
@@ -26,7 +26,7 @@ Userscripts manager: [Tampermonkey](http://tampermonkey.net/), [Violentmonkey](h
 - Sound or vibration depends on your device and browser permission. (i.e.  vibration is usually only valid on mobile devices.)
 - Two scanning method (get your position)
   1. Automatic position: get the position from the device, i.e. GPS on mobile devices,  however not accurate on desktop devices, so go to 
-  2. Manually setting a fixed position, you can get the latitude and longitude by clicking a Pokemon icon which is close to your place on the map or from some websites, e.g. [this](https://www.gps-coordinates.org/). 
+  2. Manually setting a fixed position, you can get the latitude and longitude by clicking a Pokemon icon which is close to your place on the map or from some websites, e.g. [this](https://www.gps-coordinates.org/){:target="_blank"}. 
 (This value is about 50.0, 10.0 in Germany.) 
 - The size of scanning area is similar to a circle which has the radius value in the setting menu. Actually, the shape of the area is a square.
 
