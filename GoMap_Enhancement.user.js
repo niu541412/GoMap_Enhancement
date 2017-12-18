@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         GoMap_Enhancement
 // @namespace    https://greasyfork.org/scripts/33147
-// @version      0.69
+// @version      0.70
 // @icon         http://cdn.marketplaceimages.windowsphone.com/v8/images/603207c6-16dd-48fe-af57-9a8544e82f44
 // @description  making GoMap.eu more friendly
 // @author       niu541412@gmail.com
@@ -297,10 +297,10 @@
 
     function scan_poke() {
         update_ntf_scan();
-        bnds = 1*GM_getValue("nty_lttd") - 0.009 * GM_getValue("nty_rad");
-        bndn = 1*GM_getValue("nty_lttd") + 0.009 * GM_getValue("nty_rad");
-        bndw = 1*GM_getValue("nty_lgtd") - 0.014 * GM_getValue("nty_rad");
-        bnde = 1*GM_getValue("nty_lgtd") + 0.014 * GM_getValue("nty_rad");
+        bnds = 1 * GM_getValue("nty_lttd") - 0.009 * GM_getValue("nty_rad");
+        bndn = 1 * GM_getValue("nty_lttd") + 0.009 * GM_getValue("nty_rad");
+        bndw = 1 * GM_getValue("nty_lgtd") - 0.014 * GM_getValue("nty_rad");
+        bnde = 1 * GM_getValue("nty_lgtd") + 0.014 * GM_getValue("nty_rad");
         //console.log("N",bndn,"S",bnds,"W",bndw,"E",bnde);
         var notifyPokemon = JSON.parse(localStorage.getItem('frontpokes'));
         for (var i = 1, allPokemon = []; i <= 386; i++) allPokemon.push(i);
@@ -330,22 +330,26 @@
                 if (item.eid > maxeid) {
                     maxeid = item.eid;
                 }
-                var d_time = new Date(item.disappear_time * 1000);
-                var dateString =
-                    ("0" + d_time.getHours()).slice(-2) + ":" +
-                    ("0" + d_time.getMinutes()).slice(-2) + ":" +
-                    ("0" + d_time.getSeconds()).slice(-2);
-                if (GM_getValue("nty_sound") === true)
-                    ntysound.play();
-                //console.log(item.pokemon_id);
-                var nty = new Notification(pokeNames[lang][item.pokemon_id] + ": " + item.latitude.toFixed(3) + ", " + item.longitude.toFixed(3), {
-                    body: "Disapper Time: " + dateString,
-                    icon: "../static/icons/" + item.pokemon_id + ".png",
-                    vibrate: [100, 100, 100]
-                });
-                setTimeout(function() {
-                    nty.close();
-                }, isMobile && 60000 || 10000);
+                var poke_distance = Math.sqrt(Math.pow((item.latitude - GM_getValue("nty_lttd")) / 0.009, 2) + Math.pow((item.longitude - GM_getValue("nty_lgtd")) / 0.014, 2));
+                //console.log(poke_distance / GM_getValue("nty_rad"));
+                if (poke_distance <= GM_getValue("nty_rad")) {
+                    var d_time = new Date(item.disappear_time * 1000);
+                    var dateString =
+                        ("0" + d_time.getHours()).slice(-2) + ":" +
+                        ("0" + d_time.getMinutes()).slice(-2) + ":" +
+                        ("0" + d_time.getSeconds()).slice(-2);
+                    if (GM_getValue("nty_sound") === true)
+                        ntysound.play();
+                    //console.log(item.pokemon_id);
+                    var nty = new Notification(pokeNames[lang][item.pokemon_id] + ": " + item.latitude.toFixed(3) + ", " + item.longitude.toFixed(3), {
+                        body: "Disapper Time: " + dateString,
+                        icon: "../static/icons/" + item.pokemon_id + ".png",
+                        vibrate: [100, 100, 100]
+                    });
+                    setTimeout(function() {
+                        nty.close();
+                    }, isMobile && 60000 || 10000);
+                }
             });
             /*$.each(result.gyms, function(i, item) {
                 if (item.ts > maxgid) {
