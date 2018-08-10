@@ -1,15 +1,15 @@
 # GoMap Enhancement
 
-### **Bye, this script is not continued anymore due to the gomap.eu down and my departure from Europe.**
+### <u>Bye, this script is not continued anymore due to the gomap.eu down and my departure from Europe.</u>
 
 > [GoMap](https://gomap.eu) is a Real-time Pokémon Go map for Germany and Austria.
 
 This script is designed to enhance the function of GoMap. It only works on the browsers which support userscripts.
+
 - Desktop Devices：Chrome, Firefox, Opera etc. 
 - Mobile Devices: Firefox, Yandex, Dolphin etc. for Android. iOS currently not supported.
 
 Userscripts manager: [Tampermonkey](http://tampermonkey.net/), [Violentmonkey](https://violentmonkey.github.io/), etc.
-
 
 ## Features:
 
@@ -27,7 +27,7 @@ Userscripts manager: [Tampermonkey](http://tampermonkey.net/), [Violentmonkey](h
 - Two scanning method (get your position)
   1. Automatic position: get the position from the device, i.e. GPS on mobile devices,  however not accurate on desktop devices, so go to 
   2. Manually setting a fixed position, you can get the latitude and longitude by clicking a Pokemon icon which is close to your place on the map or from some websites, e.g. [this](https://www.gps-coordinates.org/). 
-(This value is about 50.0, 10.0 in Germany.) 
+     (This value is about 50.0, 10.0 in Germany.) 
 - The size of the scanning area is similar to a circle whose radius value in the setting menu. Actually, the shape of the area required by the server is a square.
 
 If you want to scan another place which is not your current position,  choose this method.
