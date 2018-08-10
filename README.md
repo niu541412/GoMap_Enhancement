@@ -1,6 +1,6 @@
 # GoMap Enhancement
 
-###Bye, this script is not continued anymore due to the gomap.eu down and my departure from Europe.
+### Bye, this script is not continued anymore due to the gomap.eu down and my departure from Europe.
 
 > [GoMap](https://gomap.eu) is a Real-time Pokémon Go map for Germany and Austria.
 
